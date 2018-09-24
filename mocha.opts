@@ -1,7 +1,4 @@
---require source-map-support/register
---require babel-core/register
---require babel-polyfill
 --reporter spec
 --recursive
 --watch-extensions js
-src/tests/**/*.spec.js
+src/**/*.test.js
