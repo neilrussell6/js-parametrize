@@ -10,8 +10,8 @@
   "author": "Neil Russell <neilrussell6@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "sinon": "^6.0.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.2"
   }
 }
