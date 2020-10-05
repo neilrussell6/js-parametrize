@@ -1,17 +1,45 @@
 {
   "name": "js-parametrize",
   "version": "0.0.3",
-  "description": "",
+  "description": "Parametrizing of test functions in Javascript or Typescript",
+  "keywords": [
+    "parametrize",
+    "nodejs",
+    "javascript",
+    "typescript",
+    "jest each",
+    "mocha each"
+  ],
+  "author": "Neil Russell <neilrussell6@gmail.com>",
+  "license": "MIT",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neilrussell6/js-parametrize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neilrussell6/js-parametrize/issues"
+  },
+  "homepage": "https://github.com/neilrussell6/js-parametrize#readme",
   "scripts": {
     "test": "mocha --opts mocha.opts",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "_git:pre-commit": "npm run test",
+    "_git:pre-push": "npm run test"
   },
-  "author": "Neil Russell <neilrussell6@gmail.com>",
-  "license": "ISC",
+  "engines": {
+    "npm": "^6.14.6"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
+    "husky": "^4.3.0",
     "mocha": "^7.1.1",
     "sinon": "^9.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run _git:pre-commit",
+      "pre-push": "npm run _git:pre-push"
+    }
   }
 }

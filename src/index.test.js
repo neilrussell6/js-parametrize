@@ -13,6 +13,7 @@ describe('parametrize', () => {
       assert.deepEqual(testStub.args[1], [2])
       assert.deepEqual(testStub.args[2], [3])
     })
+
     it('should call test for each nested array of parameters, and pass each array value as args', () => {
       const testStub = sinon.stub()
       parametrize([[1, 2], [3, 4]], testStub)
@@ -20,6 +21,7 @@ describe('parametrize', () => {
       assert.deepEqual(testStub.args[0], [1, 2])
       assert.deepEqual(testStub.args[1], [3, 4])
     })
+
     it('should only parametrize 1 level deep', () => {
       const testStub = sinon.stub()
       parametrize([[[1], 2], [3, [4]]], testStub)
@@ -27,6 +29,7 @@ describe('parametrize', () => {
       assert.deepEqual(testStub.args[0], [[1], 2])
       assert.deepEqual(testStub.args[1], [3, [4]])
     })
+
     it('should work with async test', () => {
       const testWrapper = {fn: async () => new Promise((resolve) => setTimeout(resolve('abc'), 50))}
       const testSpy = sinon.spy(testWrapper, 'fn')
@@ -66,6 +69,7 @@ describe('parametrize', () => {
       assert.deepEqual(testStub.args[4], [3, 4])
       assert.deepEqual(testStub.args[5], [3, 5])
     })
+
     it('should call test n number of times, where n is the product of all parametrizations (3 levels)', () => {
       const testStub = sinon.stub()
       parametrize([1, 2, 3], [4, 5], [6, 7, 8, 9], testStub)
@@ -100,7 +104,6 @@ describe('parametrize', () => {
 
   describe('example usage', () => {
     describe('eg. test the single behaviour of this formatGreeting function', () => {
-
       const formatGreeting = (time, name) => {
         const prefix = {
           'morning': 'Good morning',
@@ -148,7 +151,6 @@ describe('parametrize', () => {
     })
 
     describe('async', () => {
-
       const formatGreetingInABit = name => new Promise((resolve) => {
         setTimeout(() => {
           resolve(`hello ${name}`)
