@@ -1,6 +1,6 @@
 {
   "name": "js-parametrize",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Parametrizing of test functions in Javascript or Typescript",
   "keywords": [
     "parametrize",
