@@ -1,6 +1,6 @@
 {
   "name": "js-parametrize",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Parametrizing of test functions in Javascript or Typescript",
   "keywords": [
     "parametrize",
@@ -28,7 +28,10 @@
     "_git:pre-push": "npm run test"
   },
   "engines": {
-    "npm": "^6.14.6"
+    "npm": "^6.14.11"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
