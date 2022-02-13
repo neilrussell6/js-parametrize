@@ -13,13 +13,13 @@ npm i -D js-parametrize
 
 ### Usage
 
-require (NodeJS)
+CommonJS
 ```javascript
-const parametrize = require('js-parametrize')
+const { parametrizeSync, parametrizeAsync } = require('js-parametrize')
 ```
-or import (ES6 or Typescript)
+ESM or Typescript
 ```javascript
-import * as parametrize from 'js-parametrize'
+import { parametrizeSync, parametrizeAsync } from 'js-parametrize'
 ```
 
 then parametrize your test, eg. given the following function:
@@ -38,7 +38,7 @@ const formatGreeting = (time, name) => {
 we can test as follows:
 ```javascript
 describe('...', () => {
-  parametrize([
+  parametrizeSync([
     ['morning', 'John', 'Good morning John'],
     ['morning', 'Cheryl', 'Good morning Cheryl'],
     ['afternoon', 'Dr. House', 'Good afternoon Dr. House'],
@@ -59,7 +59,7 @@ We can also test for the product of some scenarios as follows:
 
 ```javascript
 describe('...', () => {
-  parametrize([
+  parametrizeSync([
     'morning',
     'afternoon',
     'night',
