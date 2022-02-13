@@ -1,4 +1,0 @@
---reporter spec
---recursive
---watch-extensions js
-src/**/*.test.js
